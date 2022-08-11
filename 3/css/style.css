@@ -3,7 +3,7 @@
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("/source/fonts/opensans.woff2") format("woff2");
+  src: url("../fonts/opensans.woff2") format("woff2"), url("../fonts/opensans.woff") format("woff");
   font-display: swap;
   /* чтобы шрифт не блокировался и имел бесконечный период подмены */
 }
@@ -11,13 +11,9 @@
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
-  src: url("/source/fonts/opensansbold.woff2") format("woff2");
+  src: url("../fonts/opensansbold.woff2") format("woff2"), url("../fonts/opensansbold.woff") format("woff");
   font-display: swap;
 }
-html {
-  height: 100%;
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -30,18 +26,6 @@ html {
           clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-.title {
-  font-family: inherit;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 30px;
-  color: #000000;
-}
-
-.link {
-  text-decoration: none;
 }
 
 .button {
@@ -57,7 +41,21 @@ html {
   text-decoration: none;
 }
 
+.link {
+  text-decoration: none;
+}
+
 /* добавить */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
 body {
   display: flex;
   margin: 0;
@@ -70,6 +68,10 @@ body {
   font-weight: 700;
   color: #000000;
   background-color: #ffffff;
+}
+
+img {
+  max-width: 100% ж;
 }
 
 .page-footer {
@@ -87,6 +89,12 @@ body {
   border-bottom: 1px solid #e5e5e5;
 }
 
+.page-footer__copyright {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 22px;
+}
+
 .social__list {
   margin: 0;
   padding: 0;
@@ -100,16 +108,12 @@ body {
   height: 22px;
 }
 
-.page-footer__copyright {
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 22px;
-}
-
 .copyright__title {
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
+  line-height: 30px;
+  color: #000000;
   font-size: 19px;
   line-height: 18px;
 }
@@ -149,6 +153,8 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
+  line-height: 30px;
+  color: #000000;
   font-size: 25px;
   line-height: 30px;
   text-align: center;
@@ -159,6 +165,8 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 400;
+  line-height: 24px;
+  color: #000000;
   font-size: 15px;
   line-height: 30px;
   color: #444444;
@@ -229,8 +237,7 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
-  font-size: 17px;
-  line-height: 24px;
+  line-height: 30px;
   color: #000000;
 }
 
@@ -260,6 +267,17 @@ body {
   color: #000000;
 }
 
+.inner-header__description {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000000;
+  font-size: 15px;
+  line-height: 24px;
+  color: #444444;
+}
+
 .catalog-inner__title {
   margin: 0;
   margin-bottom: 30px;
@@ -267,10 +285,11 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
+  line-height: 30px;
+  color: #000000;
   font-size: 27px;
   line-height: 30px;
   text-align: center;
-  color: #000000;
   background-color: #f1f1f1;
 }
 
@@ -280,10 +299,11 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
+  line-height: 30px;
+  color: #000000;
   font-size: 27px;
   line-height: 30px;
   text-align: center;
-  color: #000000;
   background-color: #f1f1f1;
 }
 
@@ -295,10 +315,14 @@ body {
   margin: 0;
   padding-top: 73px;
   padding-bottom: 120px;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  color: #000000;
   text-align: center;
   font-size: 27px;
-  background-image: url("../../img/home-for-toys.jpg");
-  background-repeat: no-repeat;
+  background: #f1f1f1 url("../img/home-for-toys.jpg") no-repeat;
   background-position-x: center;
   background-size: cover;
 }
@@ -333,6 +357,11 @@ body {
 .advantages__title {
   margin: 0;
   margin-bottom: 82px;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  color: #000000;
   font-size: 25px;
 }
 
@@ -346,7 +375,6 @@ body {
   position: relative;
   padding-bottom: 83px;
 }
-
 .advantages__item::before {
   position: absolute;
   top: -26px;
@@ -356,34 +384,33 @@ body {
   height: 38px;
   content: "";
 }
-
-.advantages__item--flover-icon::before {
-  background-image: url("../../img/icon-flover.svg");
+.advantages__item::before {
+  background-image: url("../img/icon-flover.svg");
   background-repeat: no-repeat;
 }
 
 .advantages__item--money-icon::before {
-  background-image: url("../../img/icon-money.svg");
+  background-image: url("../img/icon-money.svg");
   background-repeat: no-repeat;
 }
 
 .advantages__item--heart-icon::before {
-  background-image: url("../../img/icon-heart.svg");
+  background-image: url("../img/icon-heart.svg");
   background-repeat: no-repeat;
 }
 
 .advantages__item--yarn-icon::before {
-  background-image: url("../../img/icon-yarn.svg");
+  background-image: url("../img/icon-yarn.svg");
   background-repeat: no-repeat;
 }
 
 .advantages__item--rocket-icon::before {
-  background-image: url("../../img/icon-rocket.svg");
+  background-image: url("../img/icon-rocket.svg");
   background-repeat: no-repeat;
 }
 
 .advantages__item--gift-icon::before {
-  background-image: url("../../img/icon-gift.svg");
+  background-image: url("../img/icon-gift.svg");
   background-repeat: no-repeat;
 }
 
@@ -392,6 +419,11 @@ body {
 }
 
 .featured__title {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  color: #000000;
   font-size: 25px;
   padding-bottom: 4px;
 }
@@ -401,6 +433,8 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
+  line-height: 30px;
+  color: #000000;
   font-size: 17px;
   line-height: 20px;
   color: #63d1bb;
@@ -411,6 +445,8 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 400;
+  line-height: 24px;
+  color: #000000;
   font-size: 15px;
   line-height: 24px;
   color: #444444;
@@ -422,6 +458,8 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 400;
+  line-height: 24px;
+  color: #000000;
   font-size: 15px;
   color: #444444;
   border-top: 1px solid #ececec;
@@ -433,6 +471,8 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 400;
+  line-height: 24px;
+  color: #000000;
   font-size: 15px;
   color: #444444;
   border-top: 1px solid #ececec;
@@ -456,6 +496,8 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
+  line-height: 30px;
+  color: #000000;
   font-size: 17px;
   line-height: 24px;
   text-align: center;
@@ -473,6 +515,11 @@ body {
 .reviews__title {
   margin: 0;
   margin-bottom: 14px;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  color: #000000;
   font-size: 25px;
 }
 
@@ -487,27 +534,8 @@ body {
   list-style: none;
 }
 
-.slider__item:not(:first-child) {
+.reviews__item:not(:first-child) {
   display: none;
-}
-
-.user-quote__text {
-  margin: 0;
-  padding-bottom: 33px;
-  font-family: inherit;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 30px;
-  color: #444444;
-}
-
-.user-quote__author {
-  font-family: inherit;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 24px;
 }
 
 .reviews__button--slider {
@@ -520,6 +548,29 @@ body {
   color: #000000;
 }
 
+.user-quote__text {
+  margin: 0;
+  padding-bottom: 33px;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000000;
+  font-size: 15px;
+  line-height: 30px;
+  color: #444444;
+}
+
+.user-quote__author {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  color: #000000;
+  font-size: 17px;
+  line-height: 24px;
+}
+
 .contacts {
   margin-bottom: 39px;
 }
@@ -527,6 +578,11 @@ body {
 .contacts__title {
   margin: 0;
   margin-bottom: 28px;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  color: #000000;
   font-size: 25px;
 }
 
@@ -538,6 +594,8 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 400;
+  line-height: 24px;
+  color: #000000;
   font-size: 14px;
   line-height: 30px;
   color: #444444;
@@ -547,6 +605,8 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 400;
+  line-height: 24px;
+  color: #000000;
   font-size: 14px;
   line-height: 30px;
   color: #444444;
@@ -586,9 +646,10 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
+  line-height: 30px;
+  color: #000000;
   font-size: 17px;
   line-height: 24px;
-  color: #000000;
 }
 
 .card__text {
@@ -597,6 +658,8 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 400;
+  line-height: 24px;
+  color: #000000;
   font-size: 13px;
   line-height: 30px;
   color: #444444;
@@ -612,9 +675,10 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
+  line-height: 30px;
+  color: #000000;
   font-size: 15px;
   line-height: 24px;
-  color: #000000;
 }
 
 .card__button {
@@ -633,6 +697,8 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
+  line-height: 30px;
+  color: #000000;
   font-size: 17px;
   line-height: 24px;
   text-align: center;
@@ -646,7 +712,7 @@ body {
   width: 55px;
   height: 38px;
   content: "";
-  background-image: url("../../img/video.svg");
+  background-image: url("../img/video.svg");
   background-repeat: no-repeat;
 }
 
@@ -662,6 +728,8 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 400;
+  line-height: 24px;
+  color: #000000;
   font-size: 13px;
   line-height: 24px;
   color: #444444;
@@ -672,6 +740,8 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 700;
+  line-height: 30px;
+  color: #000000;
   font-size: 18px;
   line-height: 16px;
   color: #444444;
@@ -687,6 +757,8 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 400;
+  line-height: 24px;
+  color: #000000;
   font-size: 13px;
   line-height: 24px;
   color: #444444;
@@ -701,6 +773,8 @@ body {
   font-family: inherit;
   font-style: normal;
   font-weight: 400;
+  line-height: 24px;
+  color: #000000;
   font-size: 14px;
   line-height: 16px;
   color: #444444;
