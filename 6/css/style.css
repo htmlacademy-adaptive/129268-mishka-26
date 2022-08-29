@@ -627,6 +627,12 @@ img {
   background-position: 50% -77px;
   background-size: cover;
 }
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  .things-cute {
+    background-image: url("../img/home-for-toys-mobile@2x.jpg");
+    background-size: auto;
+  }
+}
 
 .things-cute__title {
   font-family: inherit;
@@ -686,13 +692,13 @@ img {
 @media (min-width: 768px) {
   .things-cute {
     position: relative;
-    background-image: url("../img/home-for-toys.jpg");
+    background-image: url("../img/home-for-toys-tablet.jpg");
     background-size: auto;
   }
 }
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 2dppx) {
   .things-cute {
-    background-image: url("../img/home-for-toys-desktop.jpg");
+    background-image: url("../img/home-for-toys-tablet@2x.jpg");
     background-size: auto;
   }
 }
@@ -729,6 +735,19 @@ img {
   .things-cute__item {
     flex-wrap: wrap;
     font-size: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .things-cute {
+    position: relative;
+    background-image: url("../img/home-for-toys-desktop.jpg");
+    background-size: auto;
+  }
+}
+@media (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 2dppx) {
+  .things-cute {
+    background-image: url("../img/home-for-toys-desktop@2x.jpg");
+    background-size: auto;
   }
 }
 .advantages {
@@ -1093,13 +1112,13 @@ img {
   .reviews {
     position: relative;
     margin-bottom: 130px;
-    background: #ffffff url("../img/lace.jpg") no-repeat;
+    background: #ffffff url("../img/lace-tablet.jpg") no-repeat;
     background-position: 0%;
   }
 }
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 2dppx) {
   .reviews {
-    background-image: url("../img/lace@2x.jpg");
+    background-image: url("../img/lace-tablet@2x.jpg");
     background-size: auto;
   }
 }
@@ -1169,14 +1188,24 @@ img {
 @media (min-width: 1200px) {
   .reviews {
     margin-bottom: 161px;
+    background: #ffffff url("../img/lace-desktop.jpg") no-repeat;
     background-size: 40%;
+    background-position: 0%;
   }
-
+}
+@media (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 2dppx) {
+  .reviews {
+    background-image: url("../img/lace-desktop@2x.jpg");
+    background-size: auto;
+  }
+}
+@media (min-width: 1200px) {
   .reviews__container {
     padding: 78px 0 96px;
     padding-left: 176px;
   }
-
+}
+@media (min-width: 1200px) {
   .reviews__title {
     font-size: 53px;
   }
@@ -1591,8 +1620,8 @@ img {
 
 .production__video--button {
   position: absolute;
-  top: 37px;
-  left: 80px;
+  top: 25%;
+  left: 33%;
   padding: 0;
   background-color: transparent;
   border: none;
